@@ -7,7 +7,7 @@ population update (currently 2). The predictor and the feature subset
 evaluator can also be modified dynamically.
 
 ### Example
-------
+---
 
 ```scala
 import org.apache.spark.ml.feature.wrapper.genetic._
@@ -39,7 +39,7 @@ val result = hga.fit(training).transform(test)
 ```
 
 ### Crossover Operators
-------
+---
 
 There are currently three operators implemented. They can be found in **CrossoverOperator.scala**.
 
@@ -54,13 +54,13 @@ There are two possibilities to add a new crossover operator.
  2. Define a new class in a new file that implements the *CrossoverOperator* trait. Then, call *registerNewOperator* that can be found in **CrossoverOperator.scala**.
 
 ### Local Search Procedures
-------
+---
 
 There are currently no local search procedures implemented. The only case class found in **LocalSearch.scala** is the *NoSearch* case class. This represents
 an absence of local search. The addition of a new local search procedure is the same as above.
 
 ### Population Update
-------
+---
 
 There are currently two types of population update policies. They can be found in **GAParams.scala**.
  - *Steady State*: Two offspring are created at each step of the algorithm (i.e. one generation = two offspring).
@@ -69,7 +69,7 @@ There are currently two types of population update policies. They can be found i
 It is currently not possible to add a new population update policy.
 
 ### References
-------
+---
 
 [1] Oh, Il-Seok, Jin-Seon Lee, and Byung-Ro Moon. "Hybrid genetic algorithms for feature selection." 
 IEEE Transactions on pattern analysis and machine intelligence 26.11 (2004): 1424-1437.
