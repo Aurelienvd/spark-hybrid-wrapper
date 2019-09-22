@@ -19,6 +19,8 @@ val evaluator = new BinaryClassificationEvaluator()
 val predictor = new DecisionTreeClassifier()
 
 val hga = new HybridGA()
+    .setFeaturesCol("features")
+    .setLabelCol("label")
     .setOutputCol("selectedFeatures")
     .setK(10)
     .setPopulationSize(20)
