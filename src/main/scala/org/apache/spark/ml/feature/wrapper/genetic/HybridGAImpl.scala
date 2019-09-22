@@ -179,7 +179,7 @@ private [genetic] object HybridGAImpl {
             val stage = predictor.set(predictor.getParam("featuresCol"), "slicedFeatures").set(predictor.getParam("labelCol"), labelCol)
             val model = new Pipeline().setStages(Array(stage)).fit(training)
             val predictions = model.transform(test)
-            chrom.fitness = sign * evaluator.evaluate(predictions) - computePenalty(penalty, indices.length, k)
+            chrom.fitness = sign * evaluator.set(evaluator.getParam("labelCol"), labelCol).evaluate(predictions) - computePenalty(penalty, indices.length, k)
         }
     }
 
